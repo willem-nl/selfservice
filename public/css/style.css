@@ -1,0 +1,97 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon.eot?-f3zzvs');
+	src:url('fonts/icomoon.eot?#iefix-f3zzvs') format('embedded-opentype'),
+		url('fonts/icomoon.woff?-f3zzvs') format('woff'),
+		url('fonts/icomoon.ttf?-f3zzvs') format('truetype'),
+		url('fonts/icomoon.svg?-f3zzvs#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+	content: "\e600";
+}
+
+.icon-credit_card_back:before {
+	content: "\e638";
+}
+
+.icon-delete:before {
+	content: "\e63c";
+}
+
+.icon-hard_disk:before {
+	content: "\e64e";
+}
+
+.icon-pencil_1:before {
+	content: "\e66e";
+}
+
+.icon-pencil_write:before {
+	content: "\e670";
+}
+
+.icon-printer_1:before {
+	content: "\e678";
+}
+
+.icon-switcher_2:before {
+	content: "\e6a3";
+}
+
+.icon-home2:before {
+	content: "\e724";
+}
+
+.icon-search_1:before {
+	content: "\e761";
+}
+
+.icon-check2:before {
+	content: "\e8f6";
+}
+
+.icon-competitor_block:before {
+	content: "\e8fd";
+}
+
+.icon-group_1:before {
+	content: "\e92b";
+}
+
+.icon-man2:before {
+	content: "\e940";
+}
+
+.icon-todo:before {
+	content: "\e96c";
+}
+
+.icon-power:before {
+	content: "\e086";
+}
+
+.icon-menu:before {
+	content: "\e120";
+}
+
+.icon-question:before {
+	content: "\e601";
+}
+

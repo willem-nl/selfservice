@@ -19,7 +19,7 @@
     <li><a href="#">Start</a></li>
 </ol>
 
-<div class="container">
+<div class="page-content">
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">

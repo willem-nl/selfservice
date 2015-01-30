@@ -21,14 +21,14 @@ elixir(function(mix) {
               'public/js/bootstrap.min.js')
         .copy('bower_components/jquery/dist',
               'public/js')
-        .copy('bower_components/metisMenu/dist/metisMenu.min.css',
-              'public/css/metismenu.css')
         .copy('bower_components/metisMenu/dist/metisMenu.min.js',
               'public/js/metismenu.js')
         .copy('bower_components/pace/pace.min.js',
               'public/js/pace.js')
         .copy('bower_components/angular/angular.js',
             'public/js/angular.js')
-        .copy('bower_components/angular-ui-router/release/angular-ui-router.min.js',
-            'public/js/angular-ui-router.js');
+        .copy('bower_components/angular-utils-pagination/dirPagination.js',
+            'public/js/angular-utils-pagination.js')
+        .copy('bower_components/angular-utils-pagination/dirPagination.tpl.html',
+            'public/app/resources/paginationTemplate.tpl.html');
 });

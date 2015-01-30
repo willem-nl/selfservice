@@ -9,6 +9,7 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,500" rel="stylesheet" type="text/css">
 
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
 	<link href="css/selfservice.css" rel="stylesheet">
 	<script src="js/pace.js"></script>
 </head>
@@ -37,7 +38,7 @@
 	</div>
 
 	<script src="js/angular.js"></script>
-	<script src="js/angular-ui-router.js"></script>
+	<script src="js/angular-utils-pagination.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/nifty.js"></script>

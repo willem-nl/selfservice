@@ -20,16 +20,22 @@
     <li><a href="#">Applicaties</a></li>
 </ol>
 
-<div class="container">
-    <div class="page-content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel">
-                    <div class="panel-title">Applicaties</div>
-                    <div class="panel-body">
-                    </div>
-                    <div class="panel-footer">Panel footer</div>
+<div class="page-content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-title">Applicaties</div>
+                <div class="panel-body">
                 </div>
+                <div class="panel-footer">Panel footer</div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel">
+                <div class="panel-title">Gebruikers</div>
+                <div class="panel-body">
+                </div>
+                <div class="panel-footer">Panel footer</div>
             </div>
         </div>
     </div>

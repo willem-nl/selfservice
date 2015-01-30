@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="page-title">
-    <h1 class="page-header text-overflow">Gebruikers</h1>
+    <h1 class="page-header text-overflow">Favorieten</h1>
 
     <!--Searchbox-->
     <div class="searchbox">
@@ -17,7 +17,7 @@
 
 <ol class="breadcrumb">
     <li><a href="#">Start</a></li>
-    <li><a href="#">Gebruikers</a></li>
+    <li><a href="#">Favorieten</a></li>
 </ol>
 
 <div class="container">

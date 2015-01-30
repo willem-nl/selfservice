@@ -1,6 +1,7 @@
-/*======================================*/
-/* ADDITIONAL SIDEBAR */
-/*======================================*/
+
+
+/* ASIDE */
+/* ===================================== */
 #container {
 	#aside-container{
 		padding:0 20px;
@@ -16,17 +17,12 @@
 			display: none !important;
 		}
 	}
-	&.aside-bright{
-		#aside{
-			a:not(.btn){
-				color: @aside-bright-color;
-				&:hover, &:focus{
-					color: darken(@aside-bright-color,10%);
-				}
+	#aside {
+		.list-link li a:not(.btn){
+			color: darken(@aside-dark-color,18%);
+			&:hover{
+				color: @aside-dark-color;
 			}
-		}
-		.btn-link{
-			color: @aside-bright-color;
 		}
 	}
 }
@@ -36,110 +32,102 @@
 	color: @aside-dark-color;
 	max-height: 0;
 	overflow: hidden;
-
-	-webkit-transition: max-height .5s;
-	transition: max-height .5s;
-
 	-webkit-transform-style: preserve-3d;
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
 	-webkit-transform : translateZ(0);
-
-	.transition(all, .5s);
+	.transition(all .5s);
 	a:not(.btn):not(.btn-link){
 		color: inherit;
 	}
-	#container &{
-		.list-link li a:not(.btn){
-			color: darken(@aside-dark-color,18%);
-			&:hover{
-				color: @aside-dark-color;
-			}
-		}
-	}
 	&.aside-xs-in{
 		overflow: hidden;
-		max-height: 900px;
 		margin-bottom: 70px;
-		.transition(max-height, .5s)
 	}
-	.bord-all, .bord-top, .bord-btm, .bord-left, .bord-rgt, .bord-hor, .bord-ver, .list-divider{
+	.bord-all,
+	.bord-top,
+	.bord-btm,
+	.bord-left,
+	.bord-rgt,
+	.bord-hor,
+	.bord-ver,
+	.list-divider{
 		border-color:lighten(@aside-dark-bg,3%);
 	}
 	.btn-link{
 		color: @aside-dark-color;
 	}
-}
-
-#aside-xs-btn{
-	display: block;
-	padding: 10px 15px;
-	text-transform: uppercase;
-	text-align: center
-
+	.text-muted{
+		color: lighten(@aside-dark-bg,35%);
+	}
 }
 
 
-#aside{
-	.nav-tabs{
-		a{
+& when (@aside-tabs){
 
-			i{
-				font-size: 1.35em;
+	/* Aside with tabs */
+	/* ===================================== */
+	#aside{
+		#aside-container &{
+			.nav-tabs{
+				&.nav-justified > li{
+					display: table-cell;
+					width: 1%
+				}
+				li:not(active){
+					a{
+						border-radius: 0;
+						border: 0;
+						border-bottom:1px solid rgba(0,0,0,0.05);
+						background-color: darken(@aside-dark-bg,3%);
+						color: rgba(255,255,255,.5);
+						padding : 20px 0;
+					}
+				}
+				li:first-child > a{
+					border-left: 0;
+				}
+				li:last-child > a{
+					border-right: 0;
+				}
+				.active{
+					a{
+						border-left:1px solid rgba(0,0,0,0.1);
+						border-right:1px solid rgba(0,0,0,0.1);
+						border-bottom: 1px solid transparent;
+						background-color: transparent;
+						color: inherit !important;
+					}
+					.badge{
+						opacity: 1
+					}
+				}
+				.badge{
+					opacity: .5
+				}
+			}
+			.tab-content{
+				padding:10px 0;
 			}
 		}
-	}
-	#container.aside-bright &{
-		.nav-tabs {
-			li:not(.active){
-				a{
+		.nav-tabs a i{
+			font-size: 1.35em;
+		}
+		#container.aside-bright &{
+			.nav-tabs {
+				li:not(.active) a{
 					background-color: darken(@aside-bright-bg,5%);
 					color: rgba(0,0,0,.15);
 				}
 			}
 		}
 	}
-
-	#aside-container &{
-		.nav-tabs{
-			&.nav-justified > li{
-				display: table-cell;
-				width: 1%
-			}
-			li:not(active){
-				a{
-					border-radius: 0;
-					border:0;
-					background-color: darken(@aside-dark-bg,3%);
-					color: rgba(255,255,255,.5);
-					padding : 20px 0;
-				}
-			}
-			.active{
-				a{
-					background-color: transparent;
-					color: inherit !important;
-				}
-				.badge{
-					opacity: 1
-				}
-			}
-			.badge{
-				opacity: .5
-			}
-		}
-
-		.tab-content{
-			padding:10px 0;
-		}
-	}
 }
 
 
 
-
-/* ADDITIONAL SIDEBAR : RESPONSIVE LAYOUT */
-/*======================================*/
+/* ASIDE - RESPONSIVE LAYOUT */
+/* ===================================== */
 @media (max-width: 760px){
 	#aside.aside-xs-in{
 		margin-top:-90px
@@ -167,7 +155,6 @@
 		}
 	}
 }
-
 @media (min-width: 768px){
 	#aside{
 		max-height: none;
@@ -248,9 +235,8 @@
 	}
 
 
-	/* ADDITIONAL SIDEBAR : TOGGLE HIDE/SHOW */
-	/*======================================*/
-
+	/* ASIDE - TOGGLE HIDE/SHOW */
+	/* ===================================== */
 	#container{
 		&.aside-in {
 			#aside-container{
@@ -288,11 +274,8 @@
 		}
 	}
 
-	/*------------------------------*/
-
-	/*======================================*/
-	/* ADDITIONAL SIDEBAR : FIXED POSITION */
-	/*======================================*/
+	/* ASIDE - FIXED POSITION */
+	/* ===================================== */
 	#container{
 		&.aside-fixed{
 			#aside-container{
@@ -317,10 +300,6 @@
 
 		}
 	}
-
-
-	/* ADDITIONAL SIDEBAR RESPONSIVE LAYOUT */
-	/*======================================*/
 	#container{
 		&.aside-in{
 			#aside{
@@ -342,24 +321,35 @@
 }
 
 
-/* ADDITIONAL SIDEBAR : TOGGLE COLOR */
-/*======================================*/
-
+/* ASIDE : BRIGHT COLOR THEMES */
+/* ===================================== */
 #container{
 	&.aside-bright{
 		#aside{
 			background-color: @aside-bright-bg;
 			border-color: darken(@aside-bright-bg, 5%);
 			color: @aside-bright-color;
-			border-left: 1px solid darken(@aside-bright-bg, 5%);
+			& when (lightness(@mainnav-bg) >= 70%){
+				border: 1px solid darken(@body-bg, 7.5%);
+			}
+			& when (lightness(@body-bg) >= 95%){
+				border: 1px solid darken(@body-bg, 7.5%);
+			}
 			.text-light{
 				color : @body-color;
 			}
-			.bord-all, .bord-top, .bord-btm, .bord-lft, .bord-rgt, .bord-hor, .bord-ver, .list-divider{
+			.bord-all,
+			.bord-top,
+			.bord-btm,
+			.bord-lft,
+			.bord-rgt,
+			.bord-hor,
+			.bord-ver,
+			.list-divider{
 				border-color: darken(@aside-bright-bg, 3%);
 			}
 			.text-muted{
-				color: @text-muted;
+				color : lighten(@body-color,30%);
 			}
 			.progress{
 				background-color: darken(@aside-bright-bg, 10%);
@@ -370,12 +360,17 @@
 					color: @aside-bright-color
 				}
 			}
-		}
+			a:not(.btn){
+				color: @aside-bright-color;
+				&:hover, &:focus{
+					color: darken(@aside-bright-color,10%);
+				}
+			}
+			.btn-link{
+				color: @aside-bright-color;
+			}
+			> .nano{
 
-		&.aside-left{
-			#aside{
-				border:0;
-				border-right: 1px solid darken(@aside-bright-bg, 3%);
 			}
 		}
 

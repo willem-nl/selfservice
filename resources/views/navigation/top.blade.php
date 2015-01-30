@@ -20,7 +20,7 @@
             </ul>
             <ul class="nav navbar-top-links pull-right">
                 <li>
-                    <div>Willem Brons</div>
+                    <a href="#"><span class="menu-item">Willem Brons </span></a>
                 </li>
                 <li>
                     <a href="#"><span class="menu-item">Afmelden </span><i class="icon-switcher_2"></i></a>

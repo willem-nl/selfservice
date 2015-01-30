@@ -1,5 +1,8 @@
-@font-family                : 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-@font-size                  : 12px;
+@font-family-base			: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@font-size-base				: 11pt;
+@font-weight-base			: 400;
+@font-semibold				: 400;
+
 @page-title-font-size       : 27px;
 
 @body-bg                    : #EEF0F4;
@@ -7,12 +10,15 @@
 
 @brand-main-color           : #F49600;
 
+@selection-color			: #ffd38e;
+
 @link-color                 : @body-color;
 @link-hover-color           : darken(@body-color, 5%);
 
 @border-color               : #e9e9e9;
 @border-color2              : darken(@border-color,5%);
-@border-radius              : 2px;
+@border-color-base			: #e9e9e9;
+@border-radius-base			: 0;
 
 // CLEAN ZONE (LOGIN, REGISTER, AND ERROR PAGES CONTAINER)
 //============================================
@@ -25,17 +31,18 @@
 @navbar-color               : @body-color;
 @brand-bg                   : @brand-main-color;
 @brand-bg-overlay           : @mainnav-bg;
+@brand-hover-color			: #fff;
 @brand-icon-color           : #fff;
-@brand-color                : @state-active-color;
-@brand-color-overlay        : @navbar-color;
+@brand-color                : #fff;
+@brand-color-overlay        : #fff;
 @brand-font-size            : 20px;
 
 // NAVIGATION
 //============================================
 @mainnav-bg                 : #2b313a;
 @mainnav-color              : #999;
-@mainnav-hover-color        : @mainnav-active-color;
-@mainnav-active-bg          : @body-bg;
+@mainnav-hover-color        : #fff;
+@mainnav-active-bg          : @mainnav-bg;
 @mainnav-active-color       : @mainnav-bg;
 @mainnav-active-state       : @brand-main-color;
 
@@ -55,9 +62,9 @@
 @aside-dark-bg              : lighten(@mainnav-bg,5%);
 @aside-dark-color           : #fff;
 @aside-bright-bg            : #fff;
-@aside-bright-color         : #404040;
+@aside-bright-color         : #515151;
+@aside-tabs					: true;
 
-// FOOTER
 //============================================
 @footer-bg                  : @mainnav-bg;
 @footer-color               : @mainnav-hover-color;
@@ -87,18 +94,18 @@
 
 // COMPONENT
 //============================================
-@state-active-bg            : #3d8eb9;
+@state-active-bg            : #ffa617;
 @state-active-color         : #fff;
 
 // Reduce the file size by disabling the color of the components that you do not use.
-@enable-mint                : true;
-@enable-purple              : true;
-@enable-pink                : true;
-@enable-dark                : true;
+@enable-mint                : false;
+@enable-purple              : false;
+@enable-pink                : false;
+@enable-dark                : false;
 
 @light-bg                   : #fff;
 @gray-bg                    : #e3e8ee;
-@primary-bg                 : #458fd2;
+@primary-bg                 : @brand-main-color;
 @info-bg                    : #3bb5e8;
 @success-bg                 : #8cc152;
 @warning-bg                 : #feab34;
@@ -127,7 +134,7 @@
 //Disable components that you do not use.
 @table                      : true;
 @form-control               : true;
-@nav-pills                  : true;
+@nav-pills                  : false;
 @list-group                 : true;
 @label                      : true;
 @badge                      : true;
@@ -137,12 +144,12 @@
 @tooltip                    : true;
 @popover                    : true;
 @dropdown                   : true;
-@well                       : true;
-@progressbar                : true;
+@well                       : false;
+@progressbar                : false;
 @pager                      : true;
 @pagination                 : true;
-@carousel                   : true;
-@accordion                  : true;
+@carousel                   : false;
+@accordion                  : false;
 @tabs                       : true;
 @bg                         : true;
 @txt                        : true;
@@ -155,7 +162,7 @@
 @include-btn-labeled        : true;
 @include-btn-circle         : true;
 @include-btn-icon           : true;
-@include-btn-rounded        : true;
+@include-btn-rounded        : false;
 
 @table-border-color         : rgba(0,0,0,0.03);
 @tooltip-bg                 : #1c1e21;
@@ -174,14 +181,16 @@
 // EXTRA
 //============================================
 @megamenu					: true;
+
 @timeline                   : true;
-@timeline-bg                : @light-bg;
-@timeline-color             : @light-color;
+@timeline-bg                : @body-bg;
+@timeline-color             : @body-color;
+@timeline-border-color		: darken(@gray-bg, 20%);
 
 @email                      : true;
 @email-list-odd             : rgba(0, 66, 78, 0.05);
 @email-list-hover           : rgba(0, 66, 78, 0.065);
-@email-highlight            : #f2ee8d;
+@email-highlight            : #f2f0c2;
 @email-stared-color         : #ffa100;
 @email-stared-hover         : lighten(@email-stared-color,15%);
 @email-unstared-color       : @text-muted;
@@ -190,10 +199,11 @@
 @include-form-wizard-classic: true;
 @include-form-wizard-steps  : true;
 
+
 // EXCLUSIVE PLUGIN STYLESHEET
 //============================================
 @nifty-scrollTop             : true;
-@nifty-language-selector     : true;
+@nifty-language-selector     : false;
 @nifty-overlay               : true;
 @nifty-noty                  : true;
 @nifty-check                 : true;
@@ -202,14 +212,31 @@
 @nifty-check-border          : #c1c1c1;
 @nifty-check-border-radius   : 2px;
 
-.transition(@prop,@times) {
-	-webkit-transition: @prop @times;
-	transition: @prop @times;
+@full-calendar				: false;
+
+// Global Mixin
+// ------------------------------------------------------
+.transform(@transform){
+	-webkit-transform: @transform;
+	-ms-transform: @transform;
+	transform: @transform;
 }
 
-i[class*="icon-"]
-{
-  padding:0 5px;
-  vertical-align: text-top;
-  font-size:16px;
+.transition(@transition) {
+	-webkit-transition: @transition;
+	transition: @transition;
+}
+.transition(@a;@b;...) {
+	@transition :  ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+	-webkit-transition: @transition;
+	transition: @transition;
+}
+
+.selection(@color){
+	::selection {
+		background-color: @color
+	}
+	::-moz-selection {
+		background-color: @color
+	}
 }

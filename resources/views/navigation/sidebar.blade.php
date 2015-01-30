@@ -30,9 +30,16 @@
                         </li>
 
                         <!--Menu list item-->
+                        <li {{ Request::path() === 'favorieten' ? 'class=active-link' : '' }}>
+                            <a href="favorieten">
+                                <i class="icon-star_rounded"></i><span class="menu-title">Favorietenbeheer</span>
+                            </a>
+                        </li>
+
+                        <!--Menu list item-->
                         <li {{ Request::path() === 'applicaties' ? 'class=active-link' : '' }}>
                             <a href="applicaties">
-                                <i class="icon-credit_card_back"></i><span class="menu-title">Applicatiebeheer</span>
+                                <i class="icon-browser"></i><span class="menu-title">Applicatiebeheer</span>
                             </a>
                         </li>
 
@@ -50,10 +57,24 @@
                             </a>
                         </li>
 
+                        <!--Menu list item-->
+                        <li {{ Request::path() === 'help' ? 'class=active-link' : '' }}>
+                            <a href="help">
+                                <i class="icon-help_1"></i><span class="menu-title">Help</span>
+                            </a>
+                        </li>
+
                         <li class="list-divider"></li>
 
                         <!--Category name-->
                         <li class="list-header">BEHEER</li>
+
+                        <!--Menu list item-->
+                        <li {{ Request::path() === 'rollen' ? 'class=active-link' : '' }}>
+                            <a href="instellingen">
+                                <i class="icon-id"></i><span class="menu-title">Klantinstellingen</span>
+                            </a>
+                        </li>
 
                         <!--Menu list item-->
                         <li {{ Request::path() === 'rollen' ? 'class=active-link' : '' }}>
@@ -65,7 +86,7 @@
                         <!--Menu list item-->
                         <li {{ Request::path() === 'software' ? 'class=active-link' : '' }}>
                             <a href="software">
-                                <i class="icon-todo"></i><span class="menu-title">Software</span>
+                                <i class="icon-browser_options"></i><span class="menu-title">Software</span>
                             </a>
                         </li>
                     </ul>

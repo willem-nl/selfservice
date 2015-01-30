@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.less('selfservice.less')
         .copy('bower_components/fontawesome/css/font-awesome.min.css',
              'public/css/font-awesome.css')
-        .copy('bower_components/fontawesom/fonts',
+        .copy('bower_components/fontawesome/fonts',
               'public/fonts')
         .copy('bower_components/bootstrap/dist/js/bootstrap.min.js',
               'public/js/bootstrap.min.js')
@@ -27,8 +27,6 @@ elixir(function(mix) {
               'public/js/metismenu.js')
         .copy('bower_components/pace/pace.min.js',
               'public/js/pace.js')
-        .copy('bower_components/pace/themes/orange/pace-theme-flat-top.css',
-              'public/css/pace.css')
         .copy('bower_components/angular/angular.js',
             'public/js/angular.js')
         .copy('bower_components/angular-ui-router/release/angular-ui-router.min.js',

@@ -27,3 +27,5 @@ Route::get('groepsschijf', 'PagesController@groepsschijf');
 Route::get('printers', 'PagesController@printers');
 Route::get('rollen', 'PagesController@rollen');
 Route::get('software', 'PagesController@software');
+Route::get('favorieten', 'PagesController@favorieten');
+Route::get('instellingen', 'PagesController@instellingen');

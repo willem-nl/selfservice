@@ -3,6 +3,7 @@ angular
         $interpolateProvider.startSymbol('<%');
         $interpolateProvider.endSymbol('%>');
     })
+
     .filter('offset', function (){
       return function (input, start) {
           start = parseInt(start, 10);

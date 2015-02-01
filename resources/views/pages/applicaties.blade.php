@@ -7,7 +7,7 @@
     <!--Searchbox-->
     <div class="searchbox">
         <div class="input-group custom-search-form">
-            <input type="text" class="form-control" placeholder="Search..">
+            <input type="text" class="form-control" placeholder="Zoeken...">
             <span class="input-group-btn">
                 <button class="text-muted" type="button"><i class="icon-search_1"></i></button>
             </span>
@@ -43,4 +43,5 @@
 @endsection
 
 @section('pageJS')
+	<script src="/app/locaties.js"></script>
 @endsection

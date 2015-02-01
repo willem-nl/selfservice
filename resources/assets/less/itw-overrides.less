@@ -62,6 +62,18 @@ i[class*="icon-"]
   vertical-align: text-bottom;
 }
 
+i.icon-fixedsize{
+  font-size:16px;
+}
+
+//
+// Locations Trees
+//
+
+ul.locations-tree, ul.locations-tree ul{
+  list-style-type: none ;
+}
+
 // THEMING:
 
 body{
@@ -184,7 +196,7 @@ body, #content-container, #navbar, .pace{
 /*======================================*/
 #mainnav-container, #mainnav{
   background-color: @mainnav-bg;
-  //border-right: 1px solid darken(@mainnav-bg,3%);
+  border-right: 1px solid darken(@mainnav-bg,3%);
 }
 #mainnav .list-header, #mainnav-menu a{
   color:@mainnav-color
@@ -205,7 +217,9 @@ body, #content-container, #navbar, .pace{
   }
   > .active-sub {
     > a, >a:hover{
-      &:extend(#mainnav-menu > li > a:hover);
+      //&:extend(#mainnav-menu > li > a:hover);
+      color: #fff;
+      background-color: @mainnav-bg;
       box-shadow: none;
     }
   }
@@ -213,6 +227,10 @@ body, #content-container, #navbar, .pace{
     a.hover{
       color: @mainnav-hover-color;
       background-color: lighten(@mainnav-bg, 3%);
+    }
+
+    .arrow{
+      line-height:1;
     }
   }
   ul{

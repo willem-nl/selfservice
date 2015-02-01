@@ -23,9 +23,19 @@ Route::controllers([
 Route::get('gebruikers', 'PagesController@gebruikers');
 Route::get('groepen', 'PagesController@groepen');
 Route::get('applicaties', 'PagesController@applicaties');
-Route::get('groepsschijf', 'PagesController@groepsschijf');
+
+Route::group(['prefix' => 'opslag/'], function(){
+	Route::get('statistiek', function(){
+		return view('pages.opslag.statistiek');
+	});
+	Route::get('groepsschijf', function(){
+		return view('pages.opslag.groepsschijf');
+	});
+});
+
 Route::get('printers', 'PagesController@printers');
 Route::get('rollen', 'PagesController@rollen');
 Route::get('software', 'PagesController@software');
 Route::get('favorieten', 'PagesController@favorieten');
+
 Route::get('instellingen', 'PagesController@instellingen');

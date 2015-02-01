@@ -4,7 +4,7 @@
         <div class="navbar-header">
             <a href="/" class="navbar-brand">
                 <span class="brand-icon icon-pencil_write"></span>
-                <div class="brand-title"><img src="images/logo.png" /></div>
+                <div class="brand-title"><img src="/images/logo.png" /></div>
             </a>
         </div>
 
@@ -13,7 +13,7 @@
 
                 <li class="tgl-menu-btn">
                     <a class="mainnav-toggle" href="#">
-                        <i class="icon-menu"></i>
+                        <i class="icon-menu icon-fixedsize"></i>
                     </a>
                 </li>
 

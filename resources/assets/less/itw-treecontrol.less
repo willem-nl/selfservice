@@ -1,0 +1,82 @@
+treecontrol {
+  /* prevent user selection */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+    overflow: hidden;
+  }
+
+  li {
+    position: relative;
+    padding: 0 0 0 20px;
+    line-height: 20px;
+
+    .tree-expanded,
+    .tree-collapsed {
+      i {
+        .tree-leaf-head {
+          display: none;
+        }
+        .tree-branch-head {
+          display: inline;
+        }
+      }
+    }
+
+    .tree-leaf {
+      i {
+        .tree-branch-head {
+          display: none;
+        }
+        .tree-leaf-head {
+          display: inline;
+        }
+      }
+    }
+
+    i {
+      cursor: pointer;
+    }
+
+    .tree-label {
+      cursor: pointer;
+      display: inline;
+    }
+  }
+
+  .tree-locations{
+    li{
+      .tree-expanded{
+        i{
+          padding: 1px 10px;
+          content:"\e655";
+        }
+      }
+      .tree-collapsed{
+        i{
+          padding: 1px 10px;
+          content:"\e655";
+        }
+      }
+      .tree-leaf{
+        i{
+          padding: 1px 10px;
+          content:"\e982";
+        }
+      }
+      .tree-selected{
+        background-color: #aaddff;
+        font-weight: bold;
+      }
+    }
+  }
+}

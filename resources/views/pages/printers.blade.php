@@ -3,16 +3,6 @@
 @section('content')
 <div id="page-title">
     <h1 class="page-header text-overflow">Printerbeheer</h1>
-
-    <!--Searchbox-->
-    <div class="searchbox">
-        <div class="input-group custom-search-form">
-            <input type="text" class="form-control" placeholder="Search..">
-            <span class="input-group-btn">
-                <button class="text-muted" type="button"><i class="icon-search_1"></i></button>
-            </span>
-        </div>
-    </div>
 </div>
 
 <ol class="breadcrumb">
@@ -20,21 +10,45 @@
     <li><a href="#">Printerbeheer</a></li>
 </ol>
 
-<div class="container">
-    <div class="page-content">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel">
-                    <div class="panel-title">Printerbeheer</div>
-                    <div class="panel-body">
+<div class="page-content" ng-app="dataModule" ng-controller="dataCtrl">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="panel-control">
+                        <button class="btn btn-default btn-active-pink dropdown-toggle dropdown-toggle-icon" data-toggle="dropdown" type="button">
+                            Filter <i class="icon-filter"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li class="dropdown-header">Filter op:</li>
+                            <li><a href="#">Locatie...</a>
+                                <ul class="dropdown-menu">
+                                    <li ng-repeat="locatie in locaties"><% locatie.Name %></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="panel-footer">Panel footer</div>
+                    <h3 class="panel-title">Lokalen</h3>
                 </div>
+                <div class="panel-body">
+                    <treecontrol class="tree-locations" tree-model="locaties" options="locatieOpties"><% node.Name %></treecontrol>
+                </div>
+                <div class="panel-footer">Panel footer</div>
             </div>
         </div>
+        <div class="col-md-7">
+            <div class="panel">
+                <div class="panel-title">Printers</div>
+                <div class="panel-body">
+                </div>
+                <div class="panel-footer">Panel footer</div>
+            </div>
+        </div>
+
     </div>
 </div>
 @endsection
 
 @section('pageJS')
+    <script src="/app/data.js"></script>
 @endsection

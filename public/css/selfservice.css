@@ -5610,8 +5610,6 @@ h6,
 #mainnav-menu > li > a:active,
 #mainnav-menu > .active-link > a,
 #mainnav-menu > .active-link > a:hover,
-#mainnav-menu > .active-sub > a,
-#mainnav-menu > .active-sub > a:hover,
 #mainnav-menu ul .active-link a,
 .menu-popover .sub-menu ul .active-link a,
 .menu-popover .sub-menu ul .active-link a {
@@ -10551,6 +10549,64 @@ a.text-purple:focus {
 .panel-control > .btn-group:last-child > .btn:first-child {
   border-bottom-right-radius: 0;
 }
+treecontrol {
+  /* prevent user selection */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+}
+treecontrol ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: none;
+  overflow: hidden;
+}
+treecontrol li {
+  position: relative;
+  padding: 0 0 0 20px;
+  line-height: 20px;
+}
+treecontrol li .tree-expanded i .tree-leaf-head,
+treecontrol li .tree-collapsed i .tree-leaf-head {
+  display: none;
+}
+treecontrol li .tree-expanded i .tree-branch-head,
+treecontrol li .tree-collapsed i .tree-branch-head {
+  display: inline;
+}
+treecontrol li .tree-leaf i .tree-branch-head {
+  display: none;
+}
+treecontrol li .tree-leaf i .tree-leaf-head {
+  display: inline;
+}
+treecontrol li i {
+  cursor: pointer;
+}
+treecontrol li .tree-label {
+  cursor: pointer;
+  display: inline;
+}
+treecontrol .tree-locations li .tree-expanded i {
+  padding: 1px 10px;
+  content: "\e655";
+}
+treecontrol .tree-locations li .tree-collapsed i {
+  padding: 1px 10px;
+  content: "\e655";
+}
+treecontrol .tree-locations li .tree-leaf i {
+  padding: 1px 10px;
+  content: "\e982";
+}
+treecontrol .tree-locations li .tree-selected {
+  background-color: #aaddff;
+  font-weight: bold;
+}
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -10595,6 +10651,13 @@ i[class*="icon-"] {
   padding: 0 5px;
   font-size: 18px;
   vertical-align: text-bottom;
+}
+i.icon-fixedsize {
+  font-size: 16px;
+}
+ul.locations-tree,
+ul.locations-tree ul {
+  list-style-type: none ;
 }
 body {
   font-weight: 400;
@@ -10694,6 +10757,7 @@ body,
 #mainnav-container,
 #mainnav {
   background-color: #2b313a;
+  border-right: 1px solid #242a31;
 }
 #mainnav .list-header,
 #mainnav-menu a {
@@ -10703,8 +10767,6 @@ body,
 #mainnav-menu > li > a:active,
 #mainnav-menu > .active-link > a,
 #mainnav-menu > .active-link > a:hover,
-#mainnav-menu > .active-sub > a,
-#mainnav-menu > .active-sub > a:hover,
 #mainnav-menu ul .active-link a,
 .menu-popover .sub-menu ul .active-link a,
 .menu-popover .sub-menu ul .active-link a {
@@ -10714,11 +10776,16 @@ body,
 }
 #mainnav-menu > .active-sub > a,
 #mainnav-menu > .active-sub > a:hover {
+  color: #fff;
+  background-color: #2b313a;
   box-shadow: none;
 }
 #mainnav-menu > li a.hover {
   color: #ffffff;
   background-color: #323843;
+}
+#mainnav-menu > li .arrow {
+  line-height: 1;
 }
 #mainnav-menu ul,
 .menu-popover .sub-menu ul,

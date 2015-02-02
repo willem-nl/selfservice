@@ -51,7 +51,8 @@
                             </a>
                             <ul class="collapse">
                                 <li {{ Request::path() === 'opslag/statistiek' ? 'class=active-link' : '' }}><a href="/opslag/statistiek">Statistieken</a></li>
-                                <li {{ Request::path() === 'opslag/groepsschijf' ? 'class=active-link' : '' }}><a href="/opslag/groepsschijf">Groepsschijfbeheer</a></li>
+                                <li {{ Request::path() === 'opslag/groepsschijf' ? 'class=active-link' : '' }}><a href="/opslag/groepsschijf">Groepsschijf</a></li>
+                                <li {{ Request::path() === 'opslag/samenwerkschijf' ? 'class=active-link' : '' }}><a href="/opslag/groepsschijf">Samenwerkschijf</a></li>
                             </ul>
                         </li>
 

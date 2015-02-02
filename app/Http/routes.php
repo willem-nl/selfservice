@@ -20,9 +20,18 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('gebruikers', 'PagesController@gebruikers');
-Route::get('groepen', 'PagesController@groepen');
-Route::get('applicaties', 'PagesController@applicaties');
+Route::group(['prefix' => 'gebruikers/'], function(){
+	Route::get('gebruikers', function(){
+		return view('pages.gebruikers.gebruikers');
+	});
+	Route::get('groepen', function(){
+		return view('pages.gebruikers.groepen');
+	});
+});
+
+Route::get('applicaties', function(){
+	return view('pages.applicaties');
+});
 
 Route::group(['prefix' => 'opslag/'], function(){
 	Route::get('statistiek', function(){
@@ -31,9 +40,19 @@ Route::group(['prefix' => 'opslag/'], function(){
 	Route::get('groepsschijf', function(){
 		return view('pages.opslag.groepsschijf');
 	});
+	Route::get('samenwerkschijf', function(){
+		return view('pages.opslag.samenwerkschijf');
+	});
 });
 
-Route::get('printers', 'PagesController@printers');
+Route::get('printers', function(){
+	return view('pages.printers');
+});
+
+Route::get('webstart', function(){
+	return view('pages.webstart.index');
+});
+
 Route::get('rollen', 'PagesController@rollen');
 Route::get('software', 'PagesController@software');
 Route::get('favorieten', 'PagesController@favorieten');

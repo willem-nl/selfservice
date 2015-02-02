@@ -54,6 +54,18 @@
     }
   }
 }
+.tab {
+  &-base {
+    .nav-tabs {
+      > .active {
+        > a, a:hover, > a:focus {
+          background-color: #fff;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
 
 i[class*="icon-"]
 {
@@ -196,7 +208,7 @@ body, #content-container, #navbar, .pace{
 /*======================================*/
 #mainnav-container, #mainnav{
   background-color: @mainnav-bg;
-  border-right: 1px solid darken(@mainnav-bg,3%);
+  //border-right: 1px solid darken(@mainnav-bg,3%);
 }
 #mainnav .list-header, #mainnav-menu a{
   color:@mainnav-color

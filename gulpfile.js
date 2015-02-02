@@ -12,11 +12,15 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('selfservice.less')
+    mix.less(['selfservice.less', 'webstart.less' ])
         .copy('bower_components/fontawesome/css/font-awesome.min.css',
              'public/css/font-awesome.css')
         .copy('bower_components/fontawesome/fonts',
               'public/fonts')
+        .copy('bower_components/Metro-UI-CSS/less',
+            'resources/assets/less/metro-ui-css')
+        .copy('bower_components/Metro-UI-CSS/min/metro.min.js',
+            'public/js/metro.min.js')
         .copy('bower_components/bootstrap/dist/js/bootstrap.min.js',
               'public/js/bootstrap.min.js')
         .copy('bower_components/jquery/dist',

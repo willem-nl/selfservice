@@ -7,7 +7,7 @@ angular
         paginationTemplateProvider.setPath('app/resources/paginationTemplate.tpl.html');
     })
     .controller('userCtrl', function ($scope, $http){
-        $http.get('app/resources/gebruikers.json')
+        $http.get('/app/resources/gebruikers.json')
             .success(function (data, status, headers, config) {
                 $scope.items = data;
             })

@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.mainwithaside')
 
 @section('content')
 <div ng-app="userModule" ng-controller="userCtrl">
@@ -16,35 +16,15 @@
         </div>
     </div>
 
-    <ol class="breadcrumb">
-        <li><a href="#">Start</a></li>
-        <li><a href="#">Gebruikers</a></li>
-    </ol>
-
     <div class="page-content">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel">
-                    <div class="panel-heading">
-                        <div class="panel-control">
-                            <div class="btn-group">
-                                <button class="btn btn-default btn-active-pink dropdown-toggle dropdown-toggle-icon" data-toggle="dropdown" type="button">
-                                    Filter <i class="icon-filter"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a href="#">Alleen automatisch aangemaakte gebruikers</a></li>
-                                    <li><a href="#">Alleen handmatig aangemaakte gebruikers</a></li>
-                                </ul>
-                            </div>
-                            <button class="btn btn-purple btn-labeled icon-add">Toevoegen</button>
-                        </div>
-                        <div class="panel-title">&nbsp;</div>
-                    </div>
                     <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Icons</th>
+                                    <th></th>
                                     <th>Loginnaam</th>
                                     <th>Naam</th>
                                     <th>Emailadres</th>
@@ -52,7 +32,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr dir-paginate="item in filteredItems = (items | filter:query | orderBy: 'SamAccountName') | itemsPerPage:16" >
+                                <tr dir-paginate="item in filteredItems = (items | filter:query | orderBy: 'SamAccountName') | itemsPerPage:12" >
                                     <td>
                                         <i class="icon-shuffle_2" ng-if="item.Manual == 0" title="Gesynchroniseerde gebruiker"></i>
                                         <i class="icon-pencil_1" ng-if="item.Manual == 1" title="Handmatig aangemaakte gebruiker"></i>
@@ -65,9 +45,9 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="panel-footer">
+                    <div class="pad-all">
                         <dir-pagination-controls></dir-pagination-controls>
-                        <div class="footer-text pull-right">
+                        <div class="footer-text text-right">
                             <span ng-if="items.length == filteredItems.length">Totaal <% items.length %> gebruikers</span>
                             <span ng-if="items.length != filteredItems.length">Er worden <% filteredItems.length %> van de <% items.length %> gebruikers getoond.</span>
                         </div>
@@ -79,6 +59,27 @@
 </div>
 @endsection
 
+@section('aside')
+<!--ASIDE-->
+<!--===================================================-->
+<aside id="aside-container">
+    <div id="aside">
+        <div class="nano">
+            <div class="nano-content">
+                <div class="pad-all">
+                    <h5 class="text-uppercase">Acties</h5>
+                    <div class="list-group bg-trans">
+                        <div class="list-group-item">Gebruiker toevoegen</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<!--===================================================-->
+<!--END ASIDE-->
+@endsection
+
 @section('pageJS')
-	<script src="app/users.js"></script>
+	<script src="/app/users.js"></script>
 @endsection

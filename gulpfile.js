@@ -21,8 +21,10 @@ elixir(function(mix) {
             'resources/assets/less/metro-ui-css')
         .copy('bower_components/Metro-UI-CSS/min/metro.min.js',
             'public/js/metro.min.js')
+        .copy('bower_components/angular-bootstrap/ui-bootstrap.min.js',
+            'public/js/ui-bootstrap.min.js')
         .copy('bower_components/bootstrap/dist/js/bootstrap.min.js',
-              'public/js/bootstrap.min.js')
+            'public/js/bootstrap.min.js')
         .copy('bower_components/jquery/dist',
               'public/js')
         .copy('bower_components/metisMenu/dist/metisMenu.min.js',
@@ -36,5 +38,15 @@ elixir(function(mix) {
         .copy('bower_components/angular-utils-pagination/dirPagination.js',
             'public/js/angular-utils-pagination.js')
         .copy('bower_components/angular-utils-pagination/dirPagination.tpl.html',
-            'public/app/resources/paginationTemplate.tpl.html');
+            'public/app/resources/paginationTemplate.tpl.html')
+        .copy('bower_components/angular-modal-service/dst/angular-modal-service.js',
+            'public/js/angular-modal-service.js')
+        .copy('bower_components/angular-animate/angular-animate.js',
+            'public/js/angular-animate.js')
+        .copy('bower_components/animate-css/animate.css',
+            'public/css/animate.css')
+        .copy('bower_components/angular-selection-model/dist/selection-model.min.js',
+            'public/js/angular-selection-model.min.js')
+        .copy('bower_components/angular-editable-text/dist/angular-editable-text.min.js',
+            'public/js/angular-editable-text.min.js');
 });

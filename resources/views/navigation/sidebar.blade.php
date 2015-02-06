@@ -29,8 +29,8 @@
                         </li>
 
                         <!--Menu list item-->
-                        <li {{ Request::path() === 'favorieten' ? 'class=active-link' : '' }}>
-                            <a href="/favorieten">
+                        <li {{ Request::path() === 'webstart/beheer' ? 'class=active-link' : '' }}>
+                            <a href="/webstart/beheer">
                                 <i class="icon-star_rounded"></i><span class="menu-title">Favorietenbeheer</span>
                             </a>
                         </li>
@@ -42,7 +42,7 @@
                             </a>
                         </li>
 
-                        <!--!!!!!!!!!!!!!!!!!!!! Menu list item-->
+                        <!--Menu list item-->
                         <li class="{{ Request::is('opslag/*') ? 'active-sub active' : '' }}">
                             <a href="#">
                                 <i class="icon-hard_disk"></i>
@@ -76,10 +76,16 @@
                         <li class="list-header">BEHEER</li>
 
                         <!--Menu list item-->
-                        <li {{ Request::path() === 'rollen' ? 'class=active-link' : '' }}>
-                            <a href="/instellingen">
-                                <i class="icon-id"></i><span class="menu-title">Klantinstellingen</span>
+                        <li class="{{ Request::is('instellingen/klant/*') ? 'active-sub active' : '' }}">
+                            <a href="#">
+                                <i class="icon-id"></i>
+                                <span class="menu-title">Klantinstellingen</span>
+                                <i class="arrow"></i>
                             </a>
+                            <ul class="collapse">
+                                <li {{ Request::path() === 'instellingen/klant/algemeen' ? 'class=active-link' : '' }}><a href="/instellingen/klant/algemeen">Algemeen</a></li>
+                                <li {{ Request::path() === 'instellingen/klant/favorieten' ? 'class=active-link' : '' }}><a href="/instellingen/klant/favorieten">Favorieten</a></li>
+                            </ul>
                         </li>
 
                         <!--Menu list item-->

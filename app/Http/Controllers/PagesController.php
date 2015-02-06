@@ -33,13 +33,5 @@ class PagesController extends Controller {
         return view('pages.software');
     }
 
-    public function favorieten(){
-        return view('pages.favorieten');
-    }
-
-    public function instellingen(){
-        return view('pages.klantinstellingen');
-    }
-
 
 }

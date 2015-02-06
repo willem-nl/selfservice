@@ -11,6 +11,11 @@
 |
 */
 
+use Illuminate\Support\Facades\Blade;
+
+Blade::setContentTags('<%', '%>');
+Blade::setEscapedContentTags('<%%', '%%>');
+
 Route::get('/', 'HomeController@index');
 
 Route::get('home', 'HomeController@index');
@@ -49,12 +54,33 @@ Route::get('printers', function(){
 	return view('pages.printers');
 });
 
-Route::get('webstart', function(){
-	return view('pages.webstart.index');
-});
+Route::get('tree', 'TreeController@createTree');
 
 Route::get('rollen', 'PagesController@rollen');
 Route::get('software', 'PagesController@software');
-Route::get('favorieten', 'PagesController@favorieten');
 
-Route::get('instellingen', 'PagesController@instellingen');
+
+Route::group(['prefix' => 'instellingen/'], function(){
+	Route::get('klant/algemeen', function(){
+		return view('pages.instellingen.klant.algemeen');
+	});
+	Route::get('klant/favorieten', function(){
+		return view('pages.instellingen.klant.favorieten');
+	});
+});
+
+Route::group(['prefix' => 'webstart/'], function(){
+
+	Route::get('/', function(){
+		return view('pages.webstart.index');
+	});
+
+	Route::get('beheer', function(){
+		return view('pages.webstart.beheer');
+	});
+
+	Route::resource('categories', 'CategoryController');
+	Route::resource('items', 'ItemController');
+	Route::resource('browsers', 'BrowserController');
+
+});

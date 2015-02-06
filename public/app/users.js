@@ -4,7 +4,7 @@ angular
         $interpolateProvider.endSymbol('%>');
     })
     .config(function(paginationTemplateProvider){
-        paginationTemplateProvider.setPath('app/resources/paginationTemplate.tpl.html');
+        paginationTemplateProvider.setPath('/app/resources/paginationTemplate.tpl.html');
     })
     .controller('userCtrl', function ($scope, $http){
         $http.get('/app/resources/gebruikers.json')

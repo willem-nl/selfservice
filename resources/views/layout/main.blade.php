@@ -11,6 +11,7 @@
 	<link href="/css/style.css" rel="stylesheet">
 	<link href="/css/font-awesome.css" rel="stylesheet">
 	<link href="/css/selfservice.css" rel="stylesheet">
+	<link href="/css/animate.css" rel="stylesheet">
 	<script src="/js/pace.js"></script>
 </head>
 
@@ -36,13 +37,15 @@
 		<button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
 
 	</div>
-
-	<script src="/js/angular.js"></script>
-	<script src="/js/angular-utils-pagination.js"></script>
-	<script src="/js/angular-tree-control.js"></script>
 	<script src="/js/jquery.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/nifty.js"></script>
+	<script src="/js/angular.js"></script>
+	<script src="/js/angular-animate.js"></script>
+	<script src="/js/angular-utils-pagination.js"></script>
+	<script src="/js/angular-modal-service.js"></script>
+	<script src="/js/angular-selection-model.min.js"></script>
+	<script src="/js/angular-editable-text.min.js"></script>
     @yield('pageJS')
 </body>
 </html>

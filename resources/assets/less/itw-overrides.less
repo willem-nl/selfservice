@@ -69,7 +69,7 @@
 
 i[class*="icon-"]
 {
-  padding:0 5px;
+  padding:0px;
   font-size:18px;
   vertical-align: text-bottom;
 }
@@ -85,6 +85,44 @@ i.icon-fixedsize{
 ul.locations-tree, ul.locations-tree ul{
   list-style-type: none ;
 }
+
+//
+// EditableText
+//
+
+
+.gg-editable-text .original-text{
+  border:1px solid transparent;
+}
+.gg-editable-text .original-text:hover, .gg-editable-text.editing {
+  border:dashed #ccc 1px;
+}
+.gg-editable-text input{
+  border:dashed #ccc 1px;
+}
+.gg-editable-text textarea:focus, .gg-editable-text input:focus{
+  outline: 0;
+}
+
+.gg-editable-text textarea,.gg-editable-text input{
+  background: inherit;
+  color: inherit;
+  font: inherit;
+  border: inherit;
+  width: 100%;
+  padding: inherit;
+  margin: 0;
+  height:inherit;
+  -webkit-font-smoothing: inherit;
+  line-height:inherit;
+  display:inline-block;
+  text-decoration: inherit;
+}
+
+.gg-editable-text span{
+  text-decoration: inherit;
+}
+
 
 // THEMING:
 
